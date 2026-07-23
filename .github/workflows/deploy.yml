@@ -1,0 +1,30 @@
+# Deploy to Cloudflare Pages on every push to `main`.
+#
+# One-time setup required in the GitHub repo settings:
+#   Settings → Secrets and variables → Actions → New repository secret
+#     CLOUDFLARE_API_TOKEN — a Cloudflare API token with Account → Cloudflare Pages → Edit
+#
+# If the "ryddat" Pages project doesn't exist yet, the first deploy will fail —
+# create it once via the Cloudflare dashboard (Workers & Pages → Create → Pages →
+# Direct Upload, name it "ryddat") or run `npx wrangler pages deploy .` locally once,
+# then re-run this workflow.
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy . --project-name=ryddat --branch=main
