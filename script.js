@@ -14,3 +14,13 @@ document.querySelectorAll(".nav a").forEach((link) => {
     navToggle.setAttribute("aria-expanded", "false");
   });
 });
+
+const earlyAccessForm = document.getElementById("earlyAccessForm");
+const ctaTile = document.getElementById("ctaTile");
+const ctaTileLabel = document.getElementById("ctaTileLabel");
+
+earlyAccessForm.addEventListener("submit", () => {
+  ctaTile.classList.remove("is-pending");
+  ctaTile.classList.add("is-clear");
+  ctaTileLabel.textContent = "Sent";
+});

@@ -1,10 +1,29 @@
+<!--
+  DIRECTION CONTRACT
+  THESIS: the site is a literal document-status board, not a floating dashboard
+  screenshot — the exact red/yellow/green andon board this audience already
+  reads at a glance on the shop floor, except this one tracks supplier
+  paperwork and updates itself.
+  OWN-WORLD: brand navy/steel/board-substrate plus one rare safety-amber
+  signal; hard 3px tiles on a thick hairline grid, flat (no shadows),
+  condensed uppercase tabular-numeral labeling.
+  STORY: a procurement/quality person sees their own scattered spreadsheet
+  turned into a board that updates itself; believes Ryddat removes the
+  specific hours spent rewriting the same supplier email; leaves an email
+  for early access.
+  FIRST VIEWPORT: a wall of status tiles behind a left-aligned headline and
+  CTA, mostly pending/outline, one tile snapping alert-to-clear on load.
+  FORM: grounded direction 3 of 6 (Status Board), assigned after one re-roll
+  eliminated Gallery of Compliance. No staging challenger fused — the
+  board's own legibility-first topology didn't need one.
+-->
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ryddat — Supplier documentation, off your plate</title>
-<meta name="description" content="Ryddat tracks which documents you're missing from every supplier, handles the requesting and follow-up, and flags what's about to expire." />
+<title>Ryddat: Stop rewriting the same supplier email</title>
+<meta name="description" content="Ryddat tracks which certificates and declarations are missing from every supplier, drafts the request, and chases the reply, so you stop doing it by hand." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -15,7 +34,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="#top" class="brand">
-      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="26" height="26" />
+      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="24" height="24" />
       <span class="brand-name">Ryddat</span>
     </a>
     <nav class="nav" id="nav">
@@ -34,22 +53,40 @@
 <main id="top">
 
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="hero-flex">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-mark"></span>For procurement &amp; quality teams</p>
-        <h1>Supplier paperwork,<br />off your plate.</h1>
+        <h1>Stop rewriting the same supplier email.</h1>
         <p class="hero-sub">
-          Ryddat tracks which certificates, declarations, and datasheets you're still
-          missing from every supplier — then handles the requesting, the follow-up,
-          and the renewal reminders.
+          Ryddat tracks which certificates and declarations are missing from every
+          supplier, drafts the request, and chases the reply. It stops being
+          something you do by hand, one inbox thread at a time.
         </p>
         <div class="hero-actions">
           <a href="#early-access" class="btn btn-primary">Get early access</a>
           <a href="#solution" class="link-arrow">See how it works <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
-      <div class="hero-mark" aria-hidden="true">
-        <img src="assets/img/icon.svg" alt="" />
+      <div class="board" aria-hidden="true">
+        <div class="board-grid">
+          <div class="tile is-clear"><span class="tile-label">SDS</span></div>
+          <div class="tile is-pending"><span class="tile-label">CE</span></div>
+          <div class="tile is-pending"><span class="tile-label">ISO 9001</span></div>
+          <div class="tile is-alert"><span class="tile-label">REACH</span></div>
+          <div class="tile is-pending"><span class="tile-label">RoHS</span></div>
+          <div class="tile is-clear"><span class="tile-label">DoP</span></div>
+          <div class="tile is-pending"><span class="tile-label">ISO 14001</span></div>
+          <div class="tile is-pending"><span class="tile-label">FSC</span></div>
+          <div class="tile is-clear"><span class="tile-label">TEST RPT</span></div>
+          <div class="tile is-pending"><span class="tile-label">DATASHEET</span></div>
+          <div class="tile is-snap"><span class="tile-label">INSURANCE</span></div>
+          <div class="tile is-pending"><span class="tile-label">ENV DECL</span></div>
+          <div class="tile is-pending"><span class="tile-label">MATERIAL</span></div>
+          <div class="tile is-clear"><span class="tile-label">PRODUCT CERT</span></div>
+          <div class="tile is-pending"><span class="tile-label">QUALITY DOC</span></div>
+          <div class="tile is-pending"><span class="tile-label">FIRE CERT</span></div>
+        </div>
+        <p class="board-caption">Illustrative preview, not real supplier data</p>
       </div>
     </div>
     <div class="stat-strip">
@@ -77,7 +114,7 @@
         <h2>Nothing about this is hard. It's just scattered.</h2>
         <p>
           Most companies still track supplier documentation through email threads,
-          shared drives, and spreadsheets. Each request is simple — doing it across
+          shared drives, and spreadsheets. Each request is simple. Doing it across
           dozens or hundreds of suppliers is what breaks down.
         </p>
       </div>
@@ -124,25 +161,25 @@
   <section class="section section-alt" id="solution">
     <div class="container">
       <p class="section-label">How it works</p>
-      <h2>One workflow, start to finish.</h2>
+      <h2>The board fills itself in.</h2>
       <ol class="steps-row">
         <li>
-          <span class="step-num">01</span>
+          <div class="tile is-pending step-tile"><span class="tile-label">01</span></div>
           <h3>Add suppliers &amp; requirements</h3>
           <p>Build your supplier list and define which documents each one needs to provide.</p>
         </li>
         <li>
-          <span class="step-num">02</span>
+          <div class="tile is-pending step-tile"><span class="tile-label">02</span></div>
           <h3>See what's missing</h3>
           <p>One view shows missing, expiring, and expired documents across every supplier.</p>
         </li>
         <li>
-          <span class="step-num">03</span>
+          <div class="tile is-amber step-tile"><span class="tile-label">03</span></div>
           <h3>Request &amp; track</h3>
-          <p>Generate a request email, send it, and track the reply — with reminders when suppliers go quiet.</p>
+          <p>Generate a request email, send it, and track the reply, with reminders when suppliers go quiet.</p>
         </li>
         <li>
-          <span class="step-num">04</span>
+          <div class="tile is-clear step-tile"><span class="tile-label">04</span></div>
           <h3>Store &amp; monitor</h3>
           <p>Received files land in the right supplier profile, expiration dates tracked automatically.</p>
         </li>
@@ -156,32 +193,50 @@
       <h2>Built around requesting, tracking, and renewing.</h2>
       <div class="bento">
         <div class="bento-item">
-          <span class="bento-tag">Core</span>
+          <div class="bento-head">
+            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">01</span></span>
+            <span class="bento-tag">Core</span>
+          </div>
           <h3>Missing documents view</h3>
-          <p>Instantly see what's missing, requested, or expired across every supplier — filter by type, owner, or status.</p>
+          <p>Instantly see what's missing, requested, or expired across every supplier. Filter by type, owner, or status.</p>
         </div>
         <div class="bento-item">
-          <span class="bento-tag">Suppliers</span>
+          <div class="bento-head">
+            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">02</span></span>
+            <span class="bento-tag">Suppliers</span>
+          </div>
           <h3>Supplier profiles</h3>
           <p>Contacts, requirements, documents, and history, all on one page per supplier.</p>
         </div>
         <div class="bento-item">
-          <span class="bento-tag">Requests</span>
+          <div class="bento-head">
+            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">03</span></span>
+            <span class="bento-tag">Requests</span>
+          </div>
           <h3>Request &amp; follow-up</h3>
           <p>Draft, send, and track requests. A follow-up gets suggested when a supplier goes quiet.</p>
         </div>
         <div class="bento-item">
-          <span class="bento-tag">Monitoring</span>
+          <div class="bento-head">
+            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">04</span></span>
+            <span class="bento-tag">Monitoring</span>
+          </div>
           <h3>Expiration tracking</h3>
-          <p>Automatic status on every document — current, expiring soon, or expired — before it's a problem.</p>
+          <p>Automatic status on every document: current, expiring soon, or expired, before it's a problem.</p>
         </div>
         <div class="bento-item">
-          <span class="bento-tag">Intake</span>
+          <div class="bento-head">
+            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">05</span></span>
+            <span class="bento-tag">Intake</span>
+          </div>
           <h3>Smart document intake</h3>
-          <p>Uploads get a suggested type and key details — a human always confirms before anything is saved.</p>
+          <p>Uploads get a suggested type and key details. A human always confirms before anything is saved.</p>
         </div>
         <div class="bento-item">
-          <span class="bento-tag">History</span>
+          <div class="bento-head">
+            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">06</span></span>
+            <span class="bento-tag">History</span>
+          </div>
           <h3>Full activity log</h3>
           <p>Every request, upload, and approval is recorded, so knowledge never sits with one person.</p>
         </div>
@@ -194,7 +249,7 @@
       <div class="section-intro">
         <p class="section-label">Who it's for</p>
         <h2>Built for supplier&#8209;heavy teams.</h2>
-        <p>Any B2B company juggling documentation from 20&ndash;500+ suppliers — procurement, quality, and compliance teams done chasing PDFs by email.</p>
+        <p>Any B2B company juggling documentation from 20&ndash;500+ suppliers: procurement, quality, and compliance teams done chasing PDFs by email.</p>
       </div>
       <p class="segments">
         Manufacturers<span>&middot;</span>Industrial suppliers<span>&middot;</span>Construction &amp; building materials<span>&middot;</span>Technical wholesalers<span>&middot;</span>Engineering companies<span>&middot;</span>Electronics<span>&middot;</span>Importers &amp; distributors<span>&middot;</span>Automotive &amp; marine<span>&middot;</span>Food production<span>&middot;</span>Quality &amp; compliance teams
@@ -204,13 +259,17 @@
 
   <section class="cta-section" id="early-access">
     <div class="container cta-inner">
-      <p class="section-label section-label-inverse">Early access</p>
+      <div class="cta-status-row">
+        <span class="tile is-pending cta-mark" id="ctaTile" aria-hidden="true"><span class="tile-label" id="ctaTileLabel">Pending</span></span>
+        <p class="section-label section-label-inverse">Early access</p>
+      </div>
       <h2>Ryddat is in early development.</h2>
-      <p class="cta-sub">Leave your email and we'll reach out when there's something to try. No spam, no list-selling — just a note when it's ready.</p>
-      <form class="early-access-form" action="mailto:nikitaradchenko2@gmail.com" method="post" enctype="text/plain">
+      <p class="cta-sub">Leave your email and we'll reach out when there's something to try. No spam, no list-selling, just a note when it's ready.</p>
+      <form class="early-access-form" id="earlyAccessForm" action="mailto:nikitaradchenko2@gmail.com" method="post" enctype="text/plain">
         <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address" />
         <button type="submit" class="btn btn-invert">Request access</button>
       </form>
+      <p class="form-note">Opens your email client with the request pre-filled.</p>
     </div>
   </section>
 
@@ -219,7 +278,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="22" height="22" />
+      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="20" height="20" />
       <span class="brand-name">Ryddat</span>
       <p>One place to request, receive, organize, and renew supplier documentation.</p>
     </div>
