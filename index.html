@@ -1,29 +1,10 @@
-<!--
-  DIRECTION CONTRACT
-  THESIS: the site is a literal document-status board, not a floating dashboard
-  screenshot — the exact red/yellow/green andon board this audience already
-  reads at a glance on the shop floor, except this one tracks supplier
-  paperwork and updates itself.
-  OWN-WORLD: brand navy/steel/board-substrate plus one rare safety-amber
-  signal; hard 3px tiles on a thick hairline grid, flat (no shadows),
-  condensed uppercase tabular-numeral labeling.
-  STORY: a procurement/quality person sees their own scattered spreadsheet
-  turned into a board that updates itself; believes Ryddat removes the
-  specific hours spent rewriting the same supplier email; leaves an email
-  for early access.
-  FIRST VIEWPORT: a wall of status tiles behind a left-aligned headline and
-  CTA, mostly pending/outline, one tile snapping alert-to-clear on load.
-  FORM: grounded direction 3 of 6 (Status Board), assigned after one re-roll
-  eliminated Gallery of Compliance. No staging challenger fused — the
-  board's own legibility-first topology didn't need one.
--->
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ryddat: Stop rewriting the same supplier email</title>
-<meta name="description" content="Ryddat tracks which certificates and declarations are missing from every supplier, drafts the request, and chases the reply, so you stop doing it by hand." />
+<title>Ryddat — Supplier documentation, without the chasing</title>
+<meta name="description" content="Ryddat tracks which certificates and declarations are missing from every supplier, drafts the request, and follows up automatically — so procurement and quality teams stop doing it by hand." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -31,72 +12,136 @@
 </head>
 <body>
 
-<header class="site-header">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="#top" class="brand">
-      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="24" height="24" />
+      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="26" height="26" />
       <span class="brand-name">Ryddat</span>
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="#problem">Problem</a>
       <a href="#solution">How it works</a>
       <a href="#features">Features</a>
       <a href="#who">Who it's for</a>
-      <a href="#early-access" class="nav-cta">Get early access <span aria-hidden="true">&rarr;</span></a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header-actions">
+      <a href="#early-access" class="btn btn-primary btn-sm">
+        Get early access
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+        <svg class="icon icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
-  <section class="hero">
-    <div class="hero-flex">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-mark"></span>For procurement &amp; quality teams</p>
-        <h1>Stop rewriting the same supplier email.</h1>
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+          Built for procurement &amp; quality teams
+        </p>
+        <h1>Supplier documentation, <span class="text-accent">without the chasing.</span></h1>
         <p class="hero-sub">
           Ryddat tracks which certificates and declarations are missing from every
-          supplier, drafts the request, and chases the reply. It stops being
-          something you do by hand, one inbox thread at a time.
+          supplier, drafts the request, and follows up automatically. What used to
+          be a spreadsheet and a dozen open email threads becomes one clear view.
         </p>
         <div class="hero-actions">
-          <a href="#early-access" class="btn btn-primary">Get early access</a>
-          <a href="#solution" class="link-arrow">See how it works <span aria-hidden="true">&rarr;</span></a>
+          <a href="#early-access" class="btn btn-primary btn-lg">
+            Get early access
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+          <a href="#solution" class="btn btn-ghost btn-lg">See how it works</a>
         </div>
+        <p class="trust-strip">
+          Built around the documents you already handle
+          <span class="trust-tags">
+            <span>SDS</span><span>CE</span><span>REACH</span><span>RoHS</span><span>ISO 9001</span><span>DoP</span>
+          </span>
+        </p>
       </div>
-      <div class="board" aria-hidden="true">
-        <div class="board-grid">
-          <div class="tile is-clear"><span class="tile-label">SDS</span></div>
-          <div class="tile is-pending"><span class="tile-label">CE</span></div>
-          <div class="tile is-pending"><span class="tile-label">ISO 9001</span></div>
-          <div class="tile is-alert"><span class="tile-label">REACH</span></div>
-          <div class="tile is-pending"><span class="tile-label">RoHS</span></div>
-          <div class="tile is-clear"><span class="tile-label">DoP</span></div>
-          <div class="tile is-pending"><span class="tile-label">ISO 14001</span></div>
-          <div class="tile is-pending"><span class="tile-label">FSC</span></div>
-          <div class="tile is-clear"><span class="tile-label">TEST RPT</span></div>
-          <div class="tile is-pending"><span class="tile-label">DATASHEET</span></div>
-          <div class="tile is-snap"><span class="tile-label">INSURANCE</span></div>
-          <div class="tile is-pending"><span class="tile-label">ENV DECL</span></div>
-          <div class="tile is-pending"><span class="tile-label">MATERIAL</span></div>
-          <div class="tile is-clear"><span class="tile-label">PRODUCT CERT</span></div>
-          <div class="tile is-pending"><span class="tile-label">QUALITY DOC</span></div>
-          <div class="tile is-pending"><span class="tile-label">FIRE CERT</span></div>
+
+      <div class="hero-visual reveal reveal-delay-1" aria-hidden="true">
+        <div class="product-card">
+          <div class="product-card-head">
+            <span class="product-card-title">Missing documents</span>
+            <span class="product-card-count" id="statCount">14 open</span>
+          </div>
+          <ul class="doc-row-list">
+            <li class="doc-row">
+              <span class="doc-avatar" style="--avatar-hue:210">AI</span>
+              <span class="doc-info">
+                <span class="doc-supplier">ABB Industries</span>
+                <span class="doc-type">REACH Declaration</span>
+              </span>
+              <span class="status-badge status-missing" id="statusBadge">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
+                <span id="statusText">Missing</span>
+              </span>
+            </li>
+            <li class="doc-row">
+              <span class="doc-avatar" style="--avatar-hue:265">NS</span>
+              <span class="doc-info">
+                <span class="doc-supplier">Nordic Steel AS</span>
+                <span class="doc-type">ISO 9001 Certificate</span>
+              </span>
+              <span class="status-badge status-requested">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                Requested
+              </span>
+            </li>
+            <li class="doc-row">
+              <span class="doc-avatar" style="--avatar-hue:155">KC</span>
+              <span class="doc-info">
+                <span class="doc-supplier">Kongsberg Components</span>
+                <span class="doc-type">CE Declaration</span>
+              </span>
+              <span class="status-badge status-received">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                Received
+              </span>
+            </li>
+            <li class="doc-row doc-row-muted">
+              <span class="doc-avatar" style="--avatar-hue:30">BM</span>
+              <span class="doc-info">
+                <span class="doc-supplier">Bergen Marine Supply</span>
+                <span class="doc-type">Insurance Certificate</span>
+              </span>
+              <span class="status-badge status-received">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                Received
+              </span>
+            </li>
+          </ul>
+          <p class="product-card-note">Illustrative preview — not real supplier data</p>
         </div>
-        <p class="board-caption">Illustrative preview, not real supplier data</p>
+        <div class="floating-chip floating-chip-1">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+          Request sent
+        </div>
+        <div class="floating-chip floating-chip-2">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"/></svg>
+          Reminder in 3 days
+        </div>
       </div>
     </div>
-    <div class="stat-strip">
+
+    <div class="stat-strip reveal">
       <div class="container stat-strip-inner">
         <div class="stat">
-          <span class="stat-num">20&ndash;500</span>
+          <span class="stat-num" data-count-to="500" data-prefix="20&ndash;">20&ndash;500</span>
           <span class="stat-label">suppliers per company, typically</span>
         </div>
         <div class="stat">
-          <span class="stat-num">12+</span>
+          <span class="stat-num" data-count-to="12" data-suffix="+">12+</span>
           <span class="stat-label">document types tracked out of the box</span>
         </div>
         <div class="stat">
@@ -108,80 +153,102 @@
   </section>
 
   <section class="section" id="problem">
-    <div class="container problem-grid">
-      <div class="section-intro">
+    <div class="container">
+      <div class="section-head reveal">
         <p class="section-label">The problem</p>
-        <h2>Nothing about this is hard. It's just scattered.</h2>
-        <p>
+        <h2>Nothing here is hard. It's just scattered.</h2>
+        <p class="section-lead">
           Most companies still track supplier documentation through email threads,
-          shared drives, and spreadsheets. Each request is simple. Doing it across
-          dozens or hundreds of suppliers is what breaks down.
+          shared drives, and spreadsheets. Each request is simple on its own —
+          doing it across dozens or hundreds of suppliers is what breaks down.
         </p>
       </div>
-      <ol class="problem-list">
-        <li>
-          <span class="problem-num">01</span>
-          <div>
-            <h3>Nobody knows what's missing</h3>
-            <p>There's no reliable overview of which suppliers have complete documentation and which don't.</p>
-          </div>
-        </li>
-        <li>
-          <span class="problem-num">02</span>
-          <div>
-            <h3>Documents go stale</h3>
-            <p>Certificates and declarations expire quietly, and outdated documents keep getting used.</p>
-          </div>
-        </li>
-        <li>
-          <span class="problem-num">03</span>
-          <div>
-            <h3>Follow-up is manual</h3>
-            <p>Employees have to remember who they emailed, when, and whether anyone replied.</p>
-          </div>
-        </li>
-        <li>
-          <span class="problem-num">04</span>
-          <div>
-            <h3>Same request, twice</h3>
-            <p>Without a shared system, different employees end up asking one supplier for the same file.</p>
-          </div>
-        </li>
-        <li>
-          <span class="problem-num">05</span>
-          <div>
-            <h3>Knowledge walks out the door</h3>
-            <p>When an employee leaves, nobody knows what was requested, received, or still outstanding.</p>
-          </div>
-        </li>
-      </ol>
+      <div class="grid grid-3">
+        <div class="problem-card reveal">
+          <span class="icon-badge icon-badge-danger">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+          </span>
+          <h3>Nobody knows what's missing</h3>
+          <p>There's no reliable overview of which suppliers have complete documentation and which don't.</p>
+        </div>
+        <div class="problem-card reveal reveal-delay-1">
+          <span class="icon-badge icon-badge-danger">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </span>
+          <h3>Documents go stale</h3>
+          <p>Certificates and declarations expire quietly, and outdated documents keep getting used.</p>
+        </div>
+        <div class="problem-card reveal reveal-delay-2">
+          <span class="icon-badge icon-badge-danger">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+          </span>
+          <h3>Same request, twice</h3>
+          <p>Without a shared system, different employees end up asking one supplier for the same file.</p>
+        </div>
+        <div class="problem-card reveal">
+          <span class="icon-badge icon-badge-danger">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+          </span>
+          <h3>Follow-up is manual</h3>
+          <p>Employees have to remember who they emailed, when, and whether anyone replied.</p>
+        </div>
+        <div class="problem-card reveal reveal-delay-1">
+          <span class="icon-badge icon-badge-danger">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z"/></svg>
+          </span>
+          <h3>Knowledge walks out the door</h3>
+          <p>When an employee leaves, nobody knows what was requested, received, or still outstanding.</p>
+        </div>
+        <div class="problem-card reveal reveal-delay-2">
+          <span class="icon-badge icon-badge-danger">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
+          </span>
+          <h3>It's slow, not hard</h3>
+          <p>Each request takes minutes. Doing it across hundreds of suppliers adds up to real hours every week.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section section-alt" id="solution">
     <div class="container">
-      <p class="section-label">How it works</p>
-      <h2>The board fills itself in.</h2>
-      <ol class="steps-row">
-        <li>
-          <div class="tile is-pending step-tile"><span class="tile-label">01</span></div>
+      <div class="section-head reveal">
+        <p class="section-label">How it works</p>
+        <h2>One workflow, start to finish.</h2>
+        <p class="section-lead">Ryddat gives every supplier a clear documentation status, and a simple path to close the gaps.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+          </span>
+          <span class="step-num">01</span>
           <h3>Add suppliers &amp; requirements</h3>
           <p>Build your supplier list and define which documents each one needs to provide.</p>
         </li>
-        <li>
-          <div class="tile is-pending step-tile"><span class="tile-label">02</span></div>
+        <li class="step reveal reveal-delay-1">
+          <span class="step-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+          </span>
+          <span class="step-num">02</span>
           <h3>See what's missing</h3>
           <p>One view shows missing, expiring, and expired documents across every supplier.</p>
         </li>
-        <li>
-          <div class="tile is-amber step-tile"><span class="tile-label">03</span></div>
+        <li class="step reveal reveal-delay-2">
+          <span class="step-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+          </span>
+          <span class="step-num">03</span>
           <h3>Request &amp; track</h3>
-          <p>Generate a request email, send it, and track the reply, with reminders when suppliers go quiet.</p>
+          <p>Generate a request email, send it, and track the reply — with reminders when suppliers go quiet.</p>
         </li>
-        <li>
-          <div class="tile is-clear step-tile"><span class="tile-label">04</span></div>
+        <li class="step reveal reveal-delay-3">
+          <span class="step-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"/></svg>
+          </span>
+          <span class="step-num">04</span>
           <h3>Store &amp; monitor</h3>
-          <p>Received files land in the right supplier profile, expiration dates tracked automatically.</p>
+          <p>Received files land in the right supplier profile, with expiration dates tracked automatically.</p>
         </li>
       </ol>
     </div>
@@ -189,87 +256,102 @@
 
   <section class="section" id="features">
     <div class="container">
-      <p class="section-label">Features</p>
-      <h2>Built around requesting, tracking, and renewing.</h2>
-      <div class="bento">
-        <div class="bento-item">
-          <div class="bento-head">
-            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">01</span></span>
-            <span class="bento-tag">Core</span>
-          </div>
-          <h3>Missing documents view</h3>
-          <p>Instantly see what's missing, requested, or expired across every supplier. Filter by type, owner, or status.</p>
-        </div>
-        <div class="bento-item">
-          <div class="bento-head">
-            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">02</span></span>
-            <span class="bento-tag">Suppliers</span>
-          </div>
+      <div class="section-head reveal">
+        <p class="section-label">Features</p>
+        <h2>Everything the workflow needs.</h2>
+        <p class="section-lead">Not another document dump — a system built around requesting, tracking, and renewing.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="feature-card reveal">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+          </span>
           <h3>Supplier profiles</h3>
-          <p>Contacts, requirements, documents, and history, all on one page per supplier.</p>
+          <p>Every supplier's contacts, requirements, documents, and history in one place.</p>
         </div>
-        <div class="bento-item">
-          <div class="bento-head">
-            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">03</span></span>
-            <span class="bento-tag">Requests</span>
-          </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+          </span>
+          <h3>Missing documents view</h3>
+          <p>Instantly see what's missing, requested, or expired. Filter by supplier, type, or owner.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+          </span>
           <h3>Request &amp; follow-up</h3>
-          <p>Draft, send, and track requests. A follow-up gets suggested when a supplier goes quiet.</p>
+          <p>Draft, send, and track requests. Ryddat suggests a follow-up when a supplier goes quiet.</p>
         </div>
-        <div class="bento-item">
-          <div class="bento-head">
-            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">04</span></span>
-            <span class="bento-tag">Monitoring</span>
-          </div>
-          <h3>Expiration tracking</h3>
+        <div class="feature-card reveal">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </span>
+          <h3>Expiration monitoring</h3>
           <p>Automatic status on every document: current, expiring soon, or expired, before it's a problem.</p>
         </div>
-        <div class="bento-item">
-          <div class="bento-head">
-            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">05</span></span>
-            <span class="bento-tag">Intake</span>
-          </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75"/></svg>
+          </span>
           <h3>Smart document intake</h3>
           <p>Uploads get a suggested type and key details. A human always confirms before anything is saved.</p>
         </div>
-        <div class="bento-item">
-          <div class="bento-head">
-            <span class="tile is-pending bento-mark" aria-hidden="true"><span class="tile-label">06</span></span>
-            <span class="bento-tag">History</span>
-          </div>
-          <h3>Full activity log</h3>
-          <p>Every request, upload, and approval is recorded, so knowledge never sits with one person.</p>
+        <div class="feature-card reveal reveal-delay-2">
+          <span class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"/></svg>
+          </span>
+          <h3>Full activity history</h3>
+          <p>An audit trail of every request, upload, and approval, so knowledge never sits with one person.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section section-alt" id="who">
-    <div class="container who-grid">
-      <div class="section-intro">
+    <div class="container">
+      <div class="section-head reveal">
         <p class="section-label">Who it's for</p>
-        <h2>Built for supplier&#8209;heavy teams.</h2>
-        <p>Any B2B company juggling documentation from 20&ndash;500+ suppliers: procurement, quality, and compliance teams done chasing PDFs by email.</p>
+        <h2>Built for supplier-heavy teams.</h2>
+        <p class="section-lead">
+          Any B2B company juggling documentation from 20&ndash;500+ suppliers: procurement, quality, and
+          compliance teams done chasing PDFs by email.
+        </p>
       </div>
-      <p class="segments">
-        Manufacturers<span>&middot;</span>Industrial suppliers<span>&middot;</span>Construction &amp; building materials<span>&middot;</span>Technical wholesalers<span>&middot;</span>Engineering companies<span>&middot;</span>Electronics<span>&middot;</span>Importers &amp; distributors<span>&middot;</span>Automotive &amp; marine<span>&middot;</span>Food production<span>&middot;</span>Quality &amp; compliance teams
-      </p>
+      <div class="tag-row reveal">
+        <span class="tag">Manufacturers</span>
+        <span class="tag">Industrial suppliers</span>
+        <span class="tag">Construction &amp; building materials</span>
+        <span class="tag">Technical wholesalers</span>
+        <span class="tag">Engineering companies</span>
+        <span class="tag">Electronics</span>
+        <span class="tag">Importers &amp; distributors</span>
+        <span class="tag">Automotive &amp; marine</span>
+        <span class="tag">Food production</span>
+        <span class="tag">Quality &amp; compliance teams</span>
+      </div>
     </div>
   </section>
 
   <section class="cta-section" id="early-access">
     <div class="container cta-inner">
-      <div class="cta-status-row">
-        <span class="tile is-pending cta-mark" id="ctaTile" aria-hidden="true"><span class="tile-label" id="ctaTileLabel">Pending</span></span>
+      <div class="cta-copy reveal">
         <p class="section-label section-label-inverse">Early access</p>
+        <h2>Ryddat is in early development.</h2>
+        <p class="cta-sub">Leave your email and we'll reach out when there's something to try. No spam, no list-selling, just a note when it's ready.</p>
       </div>
-      <h2>Ryddat is in early development.</h2>
-      <p class="cta-sub">Leave your email and we'll reach out when there's something to try. No spam, no list-selling, just a note when it's ready.</p>
-      <form class="early-access-form" id="earlyAccessForm" action="mailto:nikitaradchenko2@gmail.com" method="post" enctype="text/plain">
-        <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address" />
-        <button type="submit" class="btn btn-invert">Request access</button>
+      <form class="early-access-form reveal reveal-delay-1" id="earlyAccessForm" action="mailto:hello@ryddat.com" method="post" enctype="text/plain">
+        <label class="visually-hidden" for="emailInput">Email address</label>
+        <div class="input-group">
+          <svg class="icon input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          <input id="emailInput" type="email" name="email" placeholder="you@company.com" required />
+        </div>
+        <button type="submit" class="btn btn-invert btn-lg" id="submitBtn">
+          <span class="btn-label">Request access</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </button>
       </form>
-      <p class="form-note">Opens your email client with the request pre-filled.</p>
+      <p class="form-note reveal reveal-delay-1">Opens your email client with the request pre-filled.</p>
     </div>
   </section>
 
@@ -278,12 +360,15 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="20" height="20" />
+      <img src="assets/img/icon.svg" alt="" class="brand-mark" width="22" height="22" />
       <span class="brand-name">Ryddat</span>
       <p>One place to request, receive, organize, and renew supplier documentation.</p>
     </div>
     <div class="footer-meta">
-      <a href="mailto:nikitaradchenko2@gmail.com">nikitaradchenko2@gmail.com</a>
+      <a href="mailto:hello@ryddat.com" class="footer-email">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+        hello@ryddat.com
+      </a>
       <p>&copy; <span id="year"></span> Ryddat</p>
     </div>
   </div>
