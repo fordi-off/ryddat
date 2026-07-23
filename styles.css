@@ -102,6 +102,9 @@ a { color: var(--color-accent); text-decoration: none; }
 
 .icon { width: 1.1em; height: 1.1em; flex-shrink: 0; }
 
+/* Fixed bottom action bar — mobile only, see the max-width:720px block */
+.mobile-cta-bar { display: none; }
+
 /* Reveal on scroll */
 .reveal {
   opacity: 0;
@@ -614,9 +617,17 @@ a { color: var(--color-accent); text-decoration: none; }
   .steps::before { display: none; }
 }
 
+/* Mobile — a genuine mobile layout, not a squeezed desktop one:
+   horizontal scroll-snap carousels instead of long card stacks, a fixed
+   bottom action bar instead of a header button, a real timeline for steps,
+   scrollable chip rows instead of wrapped pill blocks. */
 @media (max-width: 720px) {
+  body { padding-bottom: 76px; }
+
+  /* Nav */
   .nav { display: none; }
   .nav-toggle { display: inline-flex; }
+  .header-actions .btn-primary { display: none; }
   .site-header.open .nav {
     display: flex;
     flex-direction: column;
@@ -630,19 +641,115 @@ a { color: var(--color-accent); text-decoration: none; }
     border-bottom: 1px solid var(--color-border);
     gap: 16px;
   }
-  .stat-strip-inner { grid-template-columns: 1fr; }
-  .stat { border-right: none; border-top: 1px solid var(--color-border); padding: 20px 0; }
-  .stat:first-child { border-top: none; }
-  .grid-3 { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .cta-compact { flex-direction: column; align-items: flex-start; }
-  .early-access-form { width: 100%; }
-  .input-group { flex: 1; }
-  .input-group input { width: auto; flex: 1; }
-  .hero { padding-top: 56px; }
-  .hero-grid { padding-bottom: 56px; gap: 40px; }
-  .section { padding: 64px 0; }
-  .cta-section { padding: 64px 0; }
+
+  /* Fixed bottom action bar replaces the header CTA on mobile */
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -12px 24px -18px rgba(2, 6, 23, 0.3);
+  }
+  .mobile-cta-bar .btn { width: 100%; padding: 13px 20px; font-size: 0.98rem; }
+
+  /* Hero — tuned for phone, not shrunk desktop */
+  .hero { padding-top: 20px; }
+  .hero-grid { padding-bottom: 32px; gap: 28px; }
+  .eyebrow { font-size: 0.7rem; padding: 5px 12px 5px 8px; margin-bottom: 16px; }
+  .hero h1 { font-size: 1.85rem; }
+  .hero-sub { font-size: 0.98rem; max-width: none; margin-top: 14px; margin-bottom: 22px; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 4px; margin-bottom: 24px; }
+  .hero-actions .btn-primary { width: 100%; }
+  .hero-actions .btn-ghost {
+    border: none;
+    background: none;
+    color: var(--color-accent);
+    padding: 10px 4px;
+  }
+  .trust-strip { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .trust-tags {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .trust-tags::-webkit-scrollbar { display: none; }
+  .trust-tags span { flex-shrink: 0; }
+  .product-card { padding: 16px; }
   .floating-chip { display: none; }
+
+  /* Stat strip — compact row, not stacked blocks with dividers */
+  .stat-strip-inner { display: flex; }
+  .stat { flex: 1; padding: 16px 6px; border-right: 1px solid var(--color-border); text-align: center; }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 1.1rem; }
+  .stat-label { font-size: 0.66rem; line-height: 1.3; }
+
+  /* Section rhythm, tighter and distinct from desktop */
+  .section { padding: 44px 0; }
+  .section-head { margin-bottom: 28px; }
+  .section-lead { font-size: 0.94rem; }
+
+  /* Problem & feature cards — horizontal scroll-snap carousel */
+  .grid-3 {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    margin: 0 -24px;
+    padding: 4px 24px 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .grid-3::-webkit-scrollbar { display: none; }
+  .problem-card, .feature-card { flex: 0 0 80%; scroll-snap-align: start; }
+
+  /* How it works — a real vertical timeline, not boxed cards */
+  .steps { display: block; grid-template-columns: unset; margin-top: 24px; }
+  .steps::before { display: none; }
+  .step { display: flex; gap: 16px; padding-bottom: 26px; position: relative; }
+  .step::before {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 44px;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-border);
+  }
+  .step:last-child::before { display: none; }
+  .step:last-child { padding-bottom: 0; }
+  .step-icon { margin-bottom: 0; flex-shrink: 0; }
+  .step-body { flex: 1; min-width: 0; }
+  .step-num { margin-bottom: 4px; }
+
+  /* Who it's for — scrollable chip row, not a wrapped pill block */
+  .tag-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 -24px;
+    padding: 0 24px 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tag-row::-webkit-scrollbar { display: none; }
+  .tag { flex-shrink: 0; }
+
+  /* CTA + footer */
+  .cta-section { padding-top: 40px; }
+  .cta-compact { flex-direction: column; align-items: stretch; padding-bottom: 28px; gap: 20px; }
+  .cta-text { max-width: none; }
+  .early-access-form { flex-direction: column; align-items: stretch; }
+  .input-group { width: 100%; }
+  .input-group input { width: auto; }
+  .early-access-form .btn { width: 100%; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
