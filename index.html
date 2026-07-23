@@ -334,43 +334,42 @@
   </section>
 
   <section class="cta-section" id="early-access">
-    <div class="container cta-inner">
-      <div class="cta-copy reveal">
+    <div class="container cta-compact reveal">
+      <div class="cta-text">
         <p class="section-label section-label-inverse">Early access</p>
         <h2>Ryddat is in early development.</h2>
-        <p class="cta-sub">Leave your email and we'll reach out when there's something to try. No spam, no list-selling, just a note when it's ready.</p>
+        <p class="cta-sub">Leave your email and we'll reach out when there's something to try.</p>
       </div>
-      <form class="early-access-form reveal reveal-delay-1" id="earlyAccessForm" action="mailto:hello@ryddat.com" method="post" enctype="text/plain">
-        <label class="visually-hidden" for="emailInput">Email address</label>
-        <div class="input-group">
-          <svg class="icon input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-          <input id="emailInput" type="email" name="email" placeholder="you@company.com" required />
-        </div>
-        <button type="submit" class="btn btn-invert btn-lg" id="submitBtn">
-          <span class="btn-label">Request access</span>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-        </button>
-      </form>
-      <p class="form-note reveal reveal-delay-1">Opens your email client with the request pre-filled.</p>
+      <div class="cta-form-wrap">
+        <form class="early-access-form" id="earlyAccessForm" action="mailto:hello@ryddat.com" method="post" enctype="text/plain">
+          <label class="visually-hidden" for="emailInput">Email address</label>
+          <div class="input-group">
+            <svg class="icon input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+            <input id="emailInput" type="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span class="btn-label">Request access</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </button>
+        </form>
+        <p class="form-note">Opens your email client — no data submitted to a server.</p>
+      </div>
     </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div class="footer-brand">
-          <img src="assets/img/icon.svg" alt="" class="brand-mark" width="22" height="22" />
+        <a href="#top" class="footer-brand">
+          <img src="assets/img/icon-inverse.svg" alt="" class="brand-mark" width="20" height="20" />
           <span class="brand-name">Ryddat</span>
-          <p>One place to request, receive, organize, and renew supplier documentation.</p>
-        </div>
+        </a>
         <nav class="footer-links" aria-label="Legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
         </nav>
         <div class="footer-meta">
-          <a href="mailto:hello@ryddat.com" class="footer-email">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-            hello@ryddat.com
-          </a>
-          <p>&copy; <span id="year"></span> Ryddat</p>
+          <a href="mailto:hello@ryddat.com" class="footer-email">hello@ryddat.com</a>
+          <span class="footer-divider" aria-hidden="true">&middot;</span>
+          <span>&copy; <span id="year"></span> Ryddat</span>
         </div>
       </div>
     </footer>
