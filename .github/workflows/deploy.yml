@@ -8,6 +8,12 @@
 # create it once via the Cloudflare dashboard (Workers & Pages → Create → Pages →
 # Direct Upload, name it "ryddat") or run `npx wrangler pages deploy .` locally once,
 # then re-run this workflow.
+#
+# --branch=production (not "main"): the "ryddat" Pages project's production_branch
+# is set to "production" from earlier work on this project. Wrangler's --branch value
+# has to match that exactly for a deploy to land on the production URL (ryddat.pages.dev)
+# instead of just a preview alias. Git branch is still `main` — this is only the label
+# Wrangler reports to Pages.
 
 name: Deploy to Cloudflare Pages
 
@@ -27,4 +33,4 @@ jobs:
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy . --project-name=ryddat --branch=main
+          command: pages deploy . --project-name=ryddat --branch=production
