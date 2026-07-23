@@ -14,6 +14,11 @@
 # has to match that exactly for a deploy to land on the production URL (ryddat.pages.dev)
 # instead of just a preview alias. Git branch is still `main` — this is only the label
 # Wrangler reports to Pages.
+#
+# wranglerVersion: '4' — the action defaults to an older Wrangler 3.x, which does an
+# extra /memberships lookup during login that needs broader token scopes than a
+# Pages-only token has (fails with "Authentication error [code: 10000]"). Wrangler 4
+# skips that check and works fine with a Pages-scoped token.
 
 name: Deploy to Cloudflare Pages
 
@@ -33,4 +38,5 @@ jobs:
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: "4"
           command: pages deploy . --project-name=ryddat --branch=production
