@@ -85,7 +85,7 @@
         <p class="trust-strip">
           <span data-i18n="hero.trustLabel">Built around the documents you already handle</span>
           <span class="trust-tags">
-            <span>SDS</span><span>CE</span><span>REACH</span><span>RoHS</span><span>ISO 9001</span><span>DoP</span>
+            <span>SDS</span><span class="dot" aria-hidden="true">&middot;</span><span>CE</span><span class="dot" aria-hidden="true">&middot;</span><span>REACH</span><span class="dot" aria-hidden="true">&middot;</span><span>RoHS</span><span class="dot" aria-hidden="true">&middot;</span><span>ISO 9001</span><span class="dot" aria-hidden="true">&middot;</span><span>DoP</span>
           </span>
         </p>
       </div>
@@ -97,18 +97,18 @@
             <span class="product-card-count" id="statCount">14 <span data-i18n="heroVisual.openSuffix">open</span></span>
           </div>
           <ul class="doc-row-list">
-            <li class="doc-row">
+            <li class="doc-row" data-slot="0">
               <span class="doc-avatar" style="--avatar-hue:210">AI</span>
               <span class="doc-info">
                 <span class="doc-supplier" data-i18n="heroVisual.supplier1">ABB Industries</span>
                 <span class="doc-type" data-i18n="heroVisual.type1">REACH Declaration</span>
               </span>
-              <span class="status-badge status-missing" id="statusBadge">
+              <span class="status-badge status-missing">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
-                <span id="statusText" data-i18n="heroVisual.statusMissing">Missing</span>
+                <span data-i18n="heroVisual.statusMissing">Missing</span>
               </span>
             </li>
-            <li class="doc-row">
+            <li class="doc-row" data-slot="1">
               <span class="doc-avatar" style="--avatar-hue:265">NS</span>
               <span class="doc-info">
                 <span class="doc-supplier" data-i18n="heroVisual.supplier2">Nordic Steel AS</span>
@@ -119,7 +119,7 @@
                 <span data-i18n="heroVisual.statusRequested">Requested</span>
               </span>
             </li>
-            <li class="doc-row">
+            <li class="doc-row" data-slot="2">
               <span class="doc-avatar" style="--avatar-hue:155">KC</span>
               <span class="doc-info">
                 <span class="doc-supplier" data-i18n="heroVisual.supplier3">Kongsberg Components</span>
@@ -130,7 +130,7 @@
                 <span data-i18n="heroVisual.statusReceived">Received</span>
               </span>
             </li>
-            <li class="doc-row doc-row-muted">
+            <li class="doc-row" data-slot="3">
               <span class="doc-avatar" style="--avatar-hue:30">BM</span>
               <span class="doc-info">
                 <span class="doc-supplier" data-i18n="heroVisual.supplier4">Bergen Marine Supply</span>
@@ -347,18 +347,18 @@
           compliance teams done chasing PDFs by email.
         </p>
       </div>
-      <div class="tag-row reveal">
-        <span class="tag" data-i18n="who.tag1">Manufacturers</span>
-        <span class="tag" data-i18n="who.tag2">Industrial suppliers</span>
-        <span class="tag" data-i18n="who.tag3">Construction &amp; building materials</span>
-        <span class="tag" data-i18n="who.tag4">Technical wholesalers</span>
-        <span class="tag" data-i18n="who.tag5">Engineering companies</span>
-        <span class="tag" data-i18n="who.tag6">Electronics</span>
-        <span class="tag" data-i18n="who.tag7">Importers &amp; distributors</span>
-        <span class="tag" data-i18n="who.tag8">Automotive &amp; marine</span>
-        <span class="tag" data-i18n="who.tag9">Food production</span>
-        <span class="tag" data-i18n="who.tag10">Quality &amp; compliance teams</span>
-      </div>
+      <ul class="segment-grid reveal">
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag1">Manufacturers</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag2">Industrial suppliers</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag3">Construction &amp; building materials</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag4">Technical wholesalers</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag5">Engineering companies</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag6">Electronics</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag7">Importers &amp; distributors</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag8">Automotive &amp; marine</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag9">Food production</span></li>
+        <li class="segment-item"><span class="segment-mark" aria-hidden="true"></span><span data-i18n="who.tag10">Quality &amp; compliance teams</span></li>
+      </ul>
     </div>
   </section>
 

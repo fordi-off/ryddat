@@ -387,16 +387,17 @@ body { opacity: 1; transition: opacity 180ms ease; }
   gap: 10px;
   margin: 0;
 }
-.trust-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.trust-tags span {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 3px 9px;
+.trust-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
   font-weight: 700;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
   color: var(--color-secondary);
 }
+.trust-tags .dot { color: var(--color-border); font-weight: 400; }
 
 /* Hero product card mockup */
 .hero-visual { position: relative; }
@@ -434,7 +435,9 @@ body { opacity: 1; transition: opacity 180ms ease; }
   transition: background var(--duration-base) var(--ease-out);
 }
 .doc-row:hover { background: var(--color-background); }
-.doc-row-muted { opacity: 0.6; }
+.doc-row-pulse { background: var(--color-accent-tint); }
+.doc-info { transition: opacity 200ms var(--ease-out); }
+.doc-row-swapping .doc-info { opacity: 0; }
 .doc-avatar {
   width: 34px;
   height: 34px;
@@ -447,6 +450,7 @@ body { opacity: 1; transition: opacity 180ms ease; }
   color: var(--color-white);
   background: hsl(var(--avatar-hue, 210) 55% 45%);
   flex-shrink: 0;
+  transition: background 200ms var(--ease-out);
 }
 .doc-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .doc-supplier { font-weight: 700; font-size: 0.87rem; color: var(--color-primary); }
@@ -562,19 +566,32 @@ body { opacity: 1; transition: opacity 180ms ease; }
 }
 .step p { font-size: 0.92rem; }
 
-/* Tags */
-.tag-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  padding: 9px 18px;
-  font-size: 0.87rem;
+/* Who it's for — a flat spec-sheet list, not a pill cloud */
+.segment-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 48px;
+  border-bottom: 1px solid var(--color-border);
+}
+.segment-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--color-primary);
-  transition: border-color var(--duration-base) var(--ease-out), background var(--duration-base) var(--ease-out);
 }
-.tag:hover { border-color: var(--color-accent); background: var(--color-accent-tint); }
+.segment-mark {
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
 
 /* CTA — compact banner, not a full hero-sized block */
 .cta-section {
@@ -735,17 +752,7 @@ body { opacity: 1; transition: opacity 180ms ease; }
     color: var(--color-accent);
     padding: 10px 4px;
   }
-  .trust-strip { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .trust-tags {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    width: 100%;
-    padding-bottom: 2px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .trust-tags::-webkit-scrollbar { display: none; }
-  .trust-tags span { flex-shrink: 0; }
+  .trust-strip { flex-direction: column; align-items: flex-start; gap: 8px; }
   .product-card { padding: 16px; }
   .floating-chip { display: none; }
 
@@ -794,17 +801,8 @@ body { opacity: 1; transition: opacity 180ms ease; }
   .step-body { flex: 1; min-width: 0; }
   .step-num { margin-bottom: 4px; }
 
-  /* Who it's for — scrollable chip row, not a wrapped pill block */
-  .tag-row {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    margin: 0 -24px;
-    padding: 0 24px 6px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .tag-row::-webkit-scrollbar { display: none; }
-  .tag { flex-shrink: 0; }
+  /* Who it's for — single-column list on narrow screens */
+  .segment-grid { grid-template-columns: 1fr; }
 
   /* CTA + footer */
   .cta-section { padding-top: 40px; }
