@@ -74,14 +74,33 @@ if (countEls.length) {
   countEls.forEach((el) => countObserver.observe(el));
 }
 
-/* Hero status demo: missing -> requested -> received, once */
+/* Hero status demo: missing -> requested -> received, once.
+   Text set here is re-applied on locale change (see the listener below),
+   since these elements get overwritten by JS and can't stay wired to
+   data-i18n once the animation has touched them. */
 const statusBadge = document.getElementById("statusBadge");
 const statusText = document.getElementById("statusText");
 const statCount = document.getElementById("statCount");
+function i18nText(key, fallback) {
+  const dict = window.RyddatI18n && window.RyddatI18n.currentDict();
+  const val = dict && window.RyddatI18n.get(dict, key);
+  return typeof val === "string" ? val : fallback;
+}
+let heroDemoStatusKey = "heroVisual.statusMissing";
+let heroDemoOpenCount = 14;
+
+function renderHeroDemoText() {
+  if (statusText) statusText.textContent = i18nText(heroDemoStatusKey, statusText.textContent);
+  if (statCount) {
+    const openSuffix = i18nText("heroVisual.openSuffix", "open");
+    statCount.textContent = heroDemoOpenCount + " " + openSuffix;
+  }
+}
+
 if (statusBadge && !reduceMotion) {
   const sequence = [
-    { delay: 1400, cls: "status-requested", label: "Requested", icon: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" },
-    { delay: 2600, cls: "status-received", label: "Received", icon: "M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" },
+    { delay: 1400, cls: "status-requested", statusKey: "heroVisual.statusRequested", icon: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" },
+    { delay: 2600, cls: "status-received", statusKey: "heroVisual.statusReceived", icon: "M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" },
   ];
   const observer = new IntersectionObserver(
     (entries) => {
@@ -92,12 +111,11 @@ if (statusBadge && !reduceMotion) {
           setTimeout(() => {
             statusBadge.classList.remove("status-missing", "status-requested", "status-received");
             statusBadge.classList.add(step.cls);
-            statusText.textContent = step.label;
+            heroDemoStatusKey = step.statusKey;
+            if (step.cls === "status-received") heroDemoOpenCount = 13;
             const path = statusBadge.querySelector("path");
             if (path) path.setAttribute("d", step.icon);
-            if (step.cls === "status-received" && statCount) {
-              statCount.textContent = "13 open";
-            }
+            renderHeroDemoText();
           }, step.delay);
         });
       });
@@ -110,14 +128,27 @@ if (statusBadge && !reduceMotion) {
 /* Early access form feedback */
 const earlyAccessForm = document.getElementById("earlyAccessForm");
 const submitBtn = document.getElementById("submitBtn");
+let submitIsLoading = false;
 if (earlyAccessForm) {
   earlyAccessForm.addEventListener("submit", () => {
     const label = submitBtn.querySelector(".btn-label");
-    if (label) label.textContent = "Opening email…";
+    submitIsLoading = true;
+    if (label) label.textContent = i18nText("cta.submitLoading", "Opening email…");
     submitBtn.disabled = true;
     setTimeout(() => {
-      if (label) label.textContent = "Request access";
+      submitIsLoading = false;
+      if (label) label.textContent = i18nText("cta.submit", "Request access");
       submitBtn.disabled = false;
     }, 2500);
   });
 }
+
+/* Re-render every dynamically-set string when the language changes,
+   since data-i18n only covers elements JS hasn't already overwritten. */
+document.addEventListener("ryddat:locale-changed", () => {
+  renderHeroDemoText();
+  if (submitIsLoading && submitBtn) {
+    const label = submitBtn.querySelector(".btn-label");
+    if (label) label.textContent = i18nText("cta.submitLoading", "Opening email…");
+  }
+});

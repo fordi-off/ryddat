@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="i18n-loading">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ryddat — Supplier documentation, without the chasing</title>
-<meta name="description" content="Ryddat tracks which certificates and declarations are missing from every supplier, drafts the request, and follows up automatically — so procurement and quality teams stop doing it by hand." />
+<title data-i18n="meta.title">Ryddat — Supplier documentation, without the chasing</title>
+<meta name="description" data-i18n-attr="content:meta.description" content="Ryddat tracks which certificates and declarations are missing from every supplier, drafts the request, and follows up automatically — so procurement and quality teams stop doing it by hand." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -21,14 +21,35 @@
       <span class="brand-name">Ryddat</span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="#problem">Problem</a>
-      <a href="#solution">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#who">Who it's for</a>
+      <a href="#problem" data-i18n="nav.problem">Problem</a>
+      <a href="#solution" data-i18n="nav.how">How it works</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#who" data-i18n="nav.who">Who it's for</a>
     </nav>
     <div class="header-actions">
+      <div class="lang-switcher">
+        <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"/></svg>
+          <span class="lang-current">EN</span>
+          <svg class="icon icon-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </button>
+        <ul class="lang-menu" role="listbox" aria-label="Select language">
+          <li role="presentation">
+            <button type="button" data-locale-option="en" role="option" aria-selected="true">
+              <span>English</span>
+              <svg class="icon lang-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            </button>
+          </li>
+          <li role="presentation">
+            <button type="button" data-locale-option="no" role="option" aria-selected="false">
+              <span>Norsk</span>
+              <svg class="icon lang-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            </button>
+          </li>
+        </ul>
+      </div>
       <a href="#early-access" class="btn btn-primary btn-sm">
-        Get early access
+        <span data-i18n="common.getEarlyAccess">Get early access</span>
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
@@ -46,23 +67,23 @@
       <div class="hero-copy reveal">
         <p class="eyebrow">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
-          Built for procurement &amp; quality teams
+          <span data-i18n="hero.eyebrow">Built for procurement &amp; quality teams</span>
         </p>
-        <h1>Supplier documentation, <span class="text-accent">without the chasing.</span></h1>
-        <p class="hero-sub">
+        <h1><span data-i18n="hero.h1Before">Supplier documentation, </span><span class="text-accent" data-i18n="hero.h1Accent">without the chasing.</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">
           Ryddat tracks which certificates and declarations are missing from every
           supplier, drafts the request, and follows up automatically. What used to
           be a spreadsheet and a dozen open email threads becomes one clear view.
         </p>
         <div class="hero-actions">
           <a href="#early-access" class="btn btn-primary btn-lg">
-            Get early access
+            <span data-i18n="common.getEarlyAccess">Get early access</span>
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
           </a>
-          <a href="#solution" class="btn btn-ghost btn-lg">See how it works</a>
+          <a href="#solution" class="btn btn-ghost btn-lg" data-i18n="hero.ctaSecondary">See how it works</a>
         </div>
         <p class="trust-strip">
-          Built around the documents you already handle
+          <span data-i18n="hero.trustLabel">Built around the documents you already handle</span>
           <span class="trust-tags">
             <span>SDS</span><span>CE</span><span>REACH</span><span>RoHS</span><span>ISO 9001</span><span>DoP</span>
           </span>
@@ -72,64 +93,64 @@
       <div class="hero-visual reveal reveal-delay-1" aria-hidden="true">
         <div class="product-card">
           <div class="product-card-head">
-            <span class="product-card-title">Missing documents</span>
-            <span class="product-card-count" id="statCount">14 open</span>
+            <span class="product-card-title" data-i18n="heroVisual.cardTitle">Missing documents</span>
+            <span class="product-card-count" id="statCount">14 <span data-i18n="heroVisual.openSuffix">open</span></span>
           </div>
           <ul class="doc-row-list">
             <li class="doc-row">
               <span class="doc-avatar" style="--avatar-hue:210">AI</span>
               <span class="doc-info">
-                <span class="doc-supplier">ABB Industries</span>
-                <span class="doc-type">REACH Declaration</span>
+                <span class="doc-supplier" data-i18n="heroVisual.supplier1">ABB Industries</span>
+                <span class="doc-type" data-i18n="heroVisual.type1">REACH Declaration</span>
               </span>
               <span class="status-badge status-missing" id="statusBadge">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
-                <span id="statusText">Missing</span>
+                <span id="statusText" data-i18n="heroVisual.statusMissing">Missing</span>
               </span>
             </li>
             <li class="doc-row">
               <span class="doc-avatar" style="--avatar-hue:265">NS</span>
               <span class="doc-info">
-                <span class="doc-supplier">Nordic Steel AS</span>
-                <span class="doc-type">ISO 9001 Certificate</span>
+                <span class="doc-supplier" data-i18n="heroVisual.supplier2">Nordic Steel AS</span>
+                <span class="doc-type" data-i18n="heroVisual.type2">ISO 9001 Certificate</span>
               </span>
               <span class="status-badge status-requested">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-                Requested
+                <span data-i18n="heroVisual.statusRequested">Requested</span>
               </span>
             </li>
             <li class="doc-row">
               <span class="doc-avatar" style="--avatar-hue:155">KC</span>
               <span class="doc-info">
-                <span class="doc-supplier">Kongsberg Components</span>
-                <span class="doc-type">CE Declaration</span>
+                <span class="doc-supplier" data-i18n="heroVisual.supplier3">Kongsberg Components</span>
+                <span class="doc-type" data-i18n="heroVisual.type3">CE Declaration</span>
               </span>
               <span class="status-badge status-received">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-                Received
+                <span data-i18n="heroVisual.statusReceived">Received</span>
               </span>
             </li>
             <li class="doc-row doc-row-muted">
               <span class="doc-avatar" style="--avatar-hue:30">BM</span>
               <span class="doc-info">
-                <span class="doc-supplier">Bergen Marine Supply</span>
-                <span class="doc-type">Insurance Certificate</span>
+                <span class="doc-supplier" data-i18n="heroVisual.supplier4">Bergen Marine Supply</span>
+                <span class="doc-type" data-i18n="heroVisual.type4">Insurance Certificate</span>
               </span>
               <span class="status-badge status-received">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-                Received
+                <span data-i18n="heroVisual.statusReceived">Received</span>
               </span>
             </li>
           </ul>
-          <p class="product-card-note">Illustrative preview — not real supplier data</p>
+          <p class="product-card-note" data-i18n="heroVisual.note">Illustrative preview — not real supplier data</p>
         </div>
         <div class="floating-chip floating-chip-1">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
-          Request sent
+          <span data-i18n="heroVisual.chipSent">Request sent</span>
         </div>
         <div class="floating-chip floating-chip-2">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"/></svg>
-          Reminder in 3 days
+          <span data-i18n="heroVisual.chipReminder">Reminder in 3 days</span>
         </div>
       </div>
     </div>
@@ -138,15 +159,15 @@
       <div class="container stat-strip-inner">
         <div class="stat">
           <span class="stat-num" data-count-to="500" data-prefix="20&ndash;">20&ndash;500</span>
-          <span class="stat-label">suppliers per company, typically</span>
+          <span class="stat-label" data-i18n="stats.suppliers">suppliers per company, typically</span>
         </div>
         <div class="stat">
           <span class="stat-num" data-count-to="12" data-suffix="+">12+</span>
-          <span class="stat-label">document types tracked out of the box</span>
+          <span class="stat-label" data-i18n="stats.docTypes">document types tracked out of the box</span>
         </div>
         <div class="stat">
           <span class="stat-num">1</span>
-          <span class="stat-label">place, instead of spreadsheets and inboxes</span>
+          <span class="stat-label" data-i18n="stats.onePlace">place, instead of spreadsheets and inboxes</span>
         </div>
       </div>
     </div>
@@ -155,9 +176,9 @@
   <section class="section" id="problem">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-label">The problem</p>
-        <h2>Nothing here is hard. It's just scattered.</h2>
-        <p class="section-lead">
+        <p class="section-label" data-i18n="problem.label">The problem</p>
+        <h2 data-i18n="problem.h2">Nothing here is hard. It's just scattered.</h2>
+        <p class="section-lead" data-i18n="problem.lead">
           Most companies still track supplier documentation through email threads,
           shared drives, and spreadsheets. Each request is simple on its own —
           doing it across dozens or hundreds of suppliers is what breaks down.
@@ -168,43 +189,43 @@
           <span class="icon-badge icon-badge-danger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
           </span>
-          <h3>Nobody knows what's missing</h3>
-          <p>There's no reliable overview of which suppliers have complete documentation and which don't.</p>
+          <h3 data-i18n="problem.item1Title">Nobody knows what's missing</h3>
+          <p data-i18n="problem.item1Desc">There's no reliable overview of which suppliers have complete documentation and which don't.</p>
         </div>
         <div class="problem-card reveal reveal-delay-1">
           <span class="icon-badge icon-badge-danger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
           </span>
-          <h3>Documents go stale</h3>
-          <p>Certificates and declarations expire quietly, and outdated documents keep getting used.</p>
+          <h3 data-i18n="problem.item2Title">Documents go stale</h3>
+          <p data-i18n="problem.item2Desc">Certificates and declarations expire quietly, and outdated documents keep getting used.</p>
         </div>
         <div class="problem-card reveal reveal-delay-2">
           <span class="icon-badge icon-badge-danger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
           </span>
-          <h3>Same request, twice</h3>
-          <p>Without a shared system, different employees end up asking one supplier for the same file.</p>
+          <h3 data-i18n="problem.item3Title">Same request, twice</h3>
+          <p data-i18n="problem.item3Desc">Without a shared system, different employees end up asking one supplier for the same file.</p>
         </div>
         <div class="problem-card reveal">
           <span class="icon-badge icon-badge-danger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
           </span>
-          <h3>Follow-up is manual</h3>
-          <p>Employees have to remember who they emailed, when, and whether anyone replied.</p>
+          <h3 data-i18n="problem.item4Title">Follow-up is manual</h3>
+          <p data-i18n="problem.item4Desc">Employees have to remember who they emailed, when, and whether anyone replied.</p>
         </div>
         <div class="problem-card reveal reveal-delay-1">
           <span class="icon-badge icon-badge-danger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z"/></svg>
           </span>
-          <h3>Knowledge walks out the door</h3>
-          <p>When an employee leaves, nobody knows what was requested, received, or still outstanding.</p>
+          <h3 data-i18n="problem.item5Title">Knowledge walks out the door</h3>
+          <p data-i18n="problem.item5Desc">When an employee leaves, nobody knows what was requested, received, or still outstanding.</p>
         </div>
         <div class="problem-card reveal reveal-delay-2">
           <span class="icon-badge icon-badge-danger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
           </span>
-          <h3>It's slow, not hard</h3>
-          <p>Each request takes minutes. Doing it across hundreds of suppliers adds up to real hours every week.</p>
+          <h3 data-i18n="problem.item6Title">It's slow, not hard</h3>
+          <p data-i18n="problem.item6Desc">Each request takes minutes. Doing it across hundreds of suppliers adds up to real hours every week.</p>
         </div>
       </div>
     </div>
@@ -213,9 +234,9 @@
   <section class="section section-alt" id="solution">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-label">How it works</p>
-        <h2>One workflow, start to finish.</h2>
-        <p class="section-lead">Ryddat gives every supplier a clear documentation status, and a simple path to close the gaps.</p>
+        <p class="section-label" data-i18n="solution.label">How it works</p>
+        <h2 data-i18n="solution.h2">One workflow, start to finish.</h2>
+        <p class="section-lead" data-i18n="solution.lead">Ryddat gives every supplier a clear documentation status, and a simple path to close the gaps.</p>
       </div>
       <ol class="steps">
         <li class="step reveal">
@@ -224,8 +245,8 @@
           </span>
           <div class="step-body">
             <span class="step-num">01</span>
-            <h3>Add suppliers &amp; requirements</h3>
-            <p>Build your supplier list and define which documents each one needs to provide.</p>
+            <h3 data-i18n="solution.step1Title">Add suppliers &amp; requirements</h3>
+            <p data-i18n="solution.step1Desc">Build your supplier list and define which documents each one needs to provide.</p>
           </div>
         </li>
         <li class="step reveal reveal-delay-1">
@@ -234,8 +255,8 @@
           </span>
           <div class="step-body">
             <span class="step-num">02</span>
-            <h3>See what's missing</h3>
-            <p>One view shows missing, expiring, and expired documents across every supplier.</p>
+            <h3 data-i18n="solution.step2Title">See what's missing</h3>
+            <p data-i18n="solution.step2Desc">One view shows missing, expiring, and expired documents across every supplier.</p>
           </div>
         </li>
         <li class="step reveal reveal-delay-2">
@@ -244,8 +265,8 @@
           </span>
           <div class="step-body">
             <span class="step-num">03</span>
-            <h3>Request &amp; track</h3>
-            <p>Generate a request email, send it, and track the reply — with reminders when suppliers go quiet.</p>
+            <h3 data-i18n="solution.step3Title">Request &amp; track</h3>
+            <p data-i18n="solution.step3Desc">Generate a request email, send it, and track the reply — with reminders when suppliers go quiet.</p>
           </div>
         </li>
         <li class="step reveal reveal-delay-3">
@@ -254,8 +275,8 @@
           </span>
           <div class="step-body">
             <span class="step-num">04</span>
-            <h3>Store &amp; monitor</h3>
-            <p>Received files land in the right supplier profile, with expiration dates tracked automatically.</p>
+            <h3 data-i18n="solution.step4Title">Store &amp; monitor</h3>
+            <p data-i18n="solution.step4Desc">Received files land in the right supplier profile, with expiration dates tracked automatically.</p>
           </div>
         </li>
       </ol>
@@ -265,52 +286,52 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-label">Features</p>
-        <h2>Everything the workflow needs.</h2>
-        <p class="section-lead">Not another document dump — a system built around requesting, tracking, and renewing.</p>
+        <p class="section-label" data-i18n="features.label">Features</p>
+        <h2 data-i18n="features.h2">Everything the workflow needs.</h2>
+        <p class="section-lead" data-i18n="features.lead">Not another document dump — a system built around requesting, tracking, and renewing.</p>
       </div>
       <div class="grid grid-3">
         <div class="feature-card reveal">
           <span class="icon-badge">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
           </span>
-          <h3>Supplier profiles</h3>
-          <p>Every supplier's contacts, requirements, documents, and history in one place.</p>
+          <h3 data-i18n="features.item1Title">Supplier profiles</h3>
+          <p data-i18n="features.item1Desc">Every supplier's contacts, requirements, documents, and history in one place.</p>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <span class="icon-badge">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
           </span>
-          <h3>Missing documents view</h3>
-          <p>Instantly see what's missing, requested, or expired. Filter by supplier, type, or owner.</p>
+          <h3 data-i18n="features.item2Title">Missing documents view</h3>
+          <p data-i18n="features.item2Desc">Instantly see what's missing, requested, or expired. Filter by supplier, type, or owner.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <span class="icon-badge">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
           </span>
-          <h3>Request &amp; follow-up</h3>
-          <p>Draft, send, and track requests. Ryddat suggests a follow-up when a supplier goes quiet.</p>
+          <h3 data-i18n="features.item3Title">Request &amp; follow-up</h3>
+          <p data-i18n="features.item3Desc">Draft, send, and track requests. Ryddat suggests a follow-up when a supplier goes quiet.</p>
         </div>
         <div class="feature-card reveal">
           <span class="icon-badge">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
           </span>
-          <h3>Expiration monitoring</h3>
-          <p>Automatic status on every document: current, expiring soon, or expired, before it's a problem.</p>
+          <h3 data-i18n="features.item4Title">Expiration monitoring</h3>
+          <p data-i18n="features.item4Desc">Automatic status on every document: current, expiring soon, or expired, before it's a problem.</p>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <span class="icon-badge">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75"/></svg>
           </span>
-          <h3>Smart document intake</h3>
-          <p>Uploads get a suggested type and key details. A human always confirms before anything is saved.</p>
+          <h3 data-i18n="features.item5Title">Smart document intake</h3>
+          <p data-i18n="features.item5Desc">Uploads get a suggested type and key details. A human always confirms before anything is saved.</p>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <span class="icon-badge">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"/></svg>
           </span>
-          <h3>Full activity history</h3>
-          <p>An audit trail of every request, upload, and approval, so knowledge never sits with one person.</p>
+          <h3 data-i18n="features.item6Title">Full activity history</h3>
+          <p data-i18n="features.item6Desc">An audit trail of every request, upload, and approval, so knowledge never sits with one person.</p>
         </div>
       </div>
     </div>
@@ -319,24 +340,24 @@
   <section class="section section-alt" id="who">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-label">Who it's for</p>
-        <h2>Built for supplier-heavy teams.</h2>
-        <p class="section-lead">
+        <p class="section-label" data-i18n="who.label">Who it's for</p>
+        <h2 data-i18n="who.h2">Built for supplier-heavy teams.</h2>
+        <p class="section-lead" data-i18n="who.lead">
           Any B2B company juggling documentation from 20&ndash;500+ suppliers: procurement, quality, and
           compliance teams done chasing PDFs by email.
         </p>
       </div>
       <div class="tag-row reveal">
-        <span class="tag">Manufacturers</span>
-        <span class="tag">Industrial suppliers</span>
-        <span class="tag">Construction &amp; building materials</span>
-        <span class="tag">Technical wholesalers</span>
-        <span class="tag">Engineering companies</span>
-        <span class="tag">Electronics</span>
-        <span class="tag">Importers &amp; distributors</span>
-        <span class="tag">Automotive &amp; marine</span>
-        <span class="tag">Food production</span>
-        <span class="tag">Quality &amp; compliance teams</span>
+        <span class="tag" data-i18n="who.tag1">Manufacturers</span>
+        <span class="tag" data-i18n="who.tag2">Industrial suppliers</span>
+        <span class="tag" data-i18n="who.tag3">Construction &amp; building materials</span>
+        <span class="tag" data-i18n="who.tag4">Technical wholesalers</span>
+        <span class="tag" data-i18n="who.tag5">Engineering companies</span>
+        <span class="tag" data-i18n="who.tag6">Electronics</span>
+        <span class="tag" data-i18n="who.tag7">Importers &amp; distributors</span>
+        <span class="tag" data-i18n="who.tag8">Automotive &amp; marine</span>
+        <span class="tag" data-i18n="who.tag9">Food production</span>
+        <span class="tag" data-i18n="who.tag10">Quality &amp; compliance teams</span>
       </div>
     </div>
   </section>
@@ -344,23 +365,23 @@
   <section class="cta-section" id="early-access">
     <div class="container cta-compact reveal">
       <div class="cta-text">
-        <p class="section-label section-label-inverse">Early access</p>
-        <h2>Ryddat is in early development.</h2>
-        <p class="cta-sub">Leave your email and we'll reach out when there's something to try.</p>
+        <p class="section-label section-label-inverse" data-i18n="cta.label">Early access</p>
+        <h2 data-i18n="cta.h2">Ryddat is in early development.</h2>
+        <p class="cta-sub" data-i18n="cta.sub">Leave your email and we'll reach out when there's something to try.</p>
       </div>
       <div class="cta-form-wrap">
         <form class="early-access-form" id="earlyAccessForm" action="mailto:hello@ryddat.com" method="post" enctype="text/plain">
           <label class="visually-hidden" for="emailInput">Email address</label>
           <div class="input-group">
             <svg class="icon input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-            <input id="emailInput" type="email" name="email" placeholder="you@company.com" required />
+            <input id="emailInput" type="email" name="email" data-i18n-attr="placeholder:cta.emailPlaceholder" placeholder="you@company.com" required />
           </div>
           <button type="submit" class="btn btn-primary" id="submitBtn">
-            <span class="btn-label">Request access</span>
+            <span class="btn-label" data-i18n="cta.submit">Request access</span>
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
           </button>
         </form>
-        <p class="form-note">Opens your email client — no data submitted to a server.</p>
+        <p class="form-note" data-i18n="cta.note">Opens your email client — no data submitted to a server.</p>
       </div>
     </div>
 
@@ -371,8 +392,8 @@
           <span class="brand-name">Ryddat</span>
         </a>
         <nav class="footer-links" aria-label="Legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
         </nav>
         <div class="footer-meta">
           <a href="mailto:hello@ryddat.com" class="footer-email">hello@ryddat.com</a>
@@ -387,11 +408,12 @@
 
 <div class="mobile-cta-bar" id="mobileCtaBar">
   <a href="#early-access" class="btn btn-primary">
-    Get early access
+    <span data-i18n="common.getEarlyAccess">Get early access</span>
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
   </a>
 </div>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
