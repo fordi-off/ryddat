@@ -443,6 +443,7 @@ a { color: var(--color-accent); text-decoration: none; }
 .stat-strip { border-top: 1px solid var(--color-border); background: var(--color-white); }
 .stat-strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
 .stat { padding: 30px 30px 30px 0; border-right: 1px solid var(--color-border); }
+.stat:not(:first-child) { padding-left: 32px; }
 .stat:last-child { border-right: none; }
 .stat-num {
   display: block;
